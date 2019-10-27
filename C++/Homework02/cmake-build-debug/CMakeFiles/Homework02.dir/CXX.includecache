@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/denis/CLionProjects/Homework02/randomized_queue.hpp
+vector
+-
+random
+-
+chrono
+-
+algorithm
+-
+
+C:/Users/denis/CLionProjects/Homework02/subset.cpp
+iostream
+-
+randomized_queue.hpp
+C:/Users/denis/CLionProjects/Homework02/randomized_queue.hpp
+
