@@ -1,0 +1,2 @@
+#!/bin/bash
+ps -ef | tail -n+2 | tr -s ' ' | cut -d' ' -f2,8 | tr -d ' '  | cut -d'/' -f1,2 | grep 'sbin' | cut -d'/' -f1 > outputTask3.log

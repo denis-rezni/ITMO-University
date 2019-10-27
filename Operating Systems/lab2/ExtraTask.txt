@@ -1,0 +1,3 @@
+#!/bin/bash
+
+find /var/log 2> /dev/null | cat | tr '\n' ',' |sed 's/,/\n\n\n/g' > extraTaskOutput.log

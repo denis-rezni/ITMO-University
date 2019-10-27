@@ -1,0 +1,8 @@
+#!/bin/bash
+if [[ "$DIRSTACK" = '~/home' ]]
+ then
+  echo "$PWD"
+ else
+  echo 'error occured'
+  exit 1
+fi

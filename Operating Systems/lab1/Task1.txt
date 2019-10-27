@@ -1,0 +1,7 @@
+#!/bin/bash
+if [[ "$1" = "$2" ]]
+then
+ echo "arguments are equal"
+else
+ echo "arguments are not equal"
+fi

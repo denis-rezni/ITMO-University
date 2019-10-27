@@ -1,0 +1,22 @@
+#!/bin/bash
+echo "Для \"nm\""
+if [ nm ]
+then
+echo "истина"
+else
+echo "ложь"
+fi
+echo "Для \"\$nm\""
+if [ $nm ]
+then
+echo "истина"
+else
+echo "ложь"
+fi
+echo "Для \"false\""
+if [ "false" ]
+then
+echo "\"false\" — истина"
+else
+echo "\"false\" — ложь"
+fi

@@ -1,0 +1,14 @@
+#!/bin/bash
+max1=0
+if [[ "$1" > "$2" ]]
+then
+max1="$1"
+else
+max1="$2"
+fi
+if [[ "$max1" > "$3" ]]
+then 
+echo "$max1"
+else
+echo "$3"
+fi

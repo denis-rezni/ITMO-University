@@ -1,0 +1,22 @@
+#!/bin/bash
+echo 'Menu:'
+echo '1 - nano'
+echo '2 - vi'
+echo '3 - links'
+echo 'other - exit'
+arg=""
+read arg
+case "$arg" in
+ 1)
+  nano
+  ;;
+ 2)
+  vi
+  ;;
+ 3)
+  links
+  ;;
+ *)
+  exit 0
+  ;;
+esac

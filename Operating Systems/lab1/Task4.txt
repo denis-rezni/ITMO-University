@@ -1,0 +1,14 @@
+#!/bin/bash
+cur=0
+res=0
+flag=0
+while [[ "$flag" = 0  ]]
+ do
+ read cur
+ ((res+=1))
+ if [[ $(("$cur" % 2)) = 0 ]]
+  then
+  flag=1
+  fi
+done
+echo "$res"

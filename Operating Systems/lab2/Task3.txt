@@ -1,0 +1,4 @@
+#!/bin/bash
+mail="[A-Za-z]\+@[A-Za-z]\+\.[A-Za-z]\+"
+grep -sorh "$mail" /etc |
+tr -s '\n' ',' > emails.lst

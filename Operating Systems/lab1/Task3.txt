@@ -1,0 +1,13 @@
+#!/bin/bash
+flag=0
+res=""
+while [[ "$flag" != 1 ]]
+ do
+ read arg
+ if [[ "$arg" = "q" ]]
+  then
+  flag=1
+ fi
+res+="$arg"
+done
+echo "$res"

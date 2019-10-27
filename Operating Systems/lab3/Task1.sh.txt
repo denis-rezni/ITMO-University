@@ -1,0 +1,3 @@
+#!/bin/bash
+ps -ef | tail -n+2 | grep '^denis' | tr -s ' ' | cut -d' ' -f2,8 > outputTask1.log
+wc -l outputTask1.log | cut -d' ' -f1
