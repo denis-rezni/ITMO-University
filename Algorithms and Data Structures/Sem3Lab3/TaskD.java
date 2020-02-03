@@ -1,0 +1,112 @@
+import java.io.*;
+import java.util.*;
+
+public class TaskD {
+    FastScanner in;
+    PrintWriter out;
+    boolean systemIO = true;
+
+    private void solve() {
+        String t = in.next();
+        int n = t.length();
+        String s = in.next();
+        String longString = t + "," + s;
+        int[] prefix = prefix(longString);
+        List<Integer> incl = new ArrayList<>();
+        for (int i = n + 1; i < longString.length(); i++) {
+            if (prefix[i] == n) {
+                incl.add(i - 2 * n + 1);
+            }
+        }
+        System.out.println(incl.size());
+        incl.forEach(i -> System.out.print(i + " "));
+
+
+    }
+
+    int[] prefix(String s) {
+        int n = s.length();
+        int[] pref = new int[n];
+        for (int i = 1; i < n; i++) {
+            int j = pref[i - 1];
+            while (j > 0 && s.charAt(i) != s.charAt(j)) {
+                j = pref[j - 1];
+            }
+            if (s.charAt(i) == s.charAt(j)) {
+                j++;
+            }
+            pref[i] = j;
+        }
+        return pref;
+    }
+
+    public void run() {
+        try {
+            if (systemIO) {
+                in = new FastScanner(System.in);
+                out = new PrintWriter(System.out);
+            } else {
+                in = new FastScanner(new File("schedule.in"));
+                out = new PrintWriter(new File("schedule.out"));
+            }
+            solve();
+
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    class FastScanner {
+        BufferedReader br;
+        StringTokenizer st;
+
+        FastScanner(File f) {
+            try {
+                br = new BufferedReader(new FileReader(f));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        FastScanner(InputStream f) {
+            br = new BufferedReader(new InputStreamReader(f));
+        }
+
+        String nextLine() {
+            try {
+                return br.readLine();
+            } catch (IOException e) {
+                return null;
+            }
+        }
+
+        String next() {
+            while (st == null || !st.hasMoreTokens()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+        long nextLong() {
+            return Long.parseLong(next());
+        }
+
+        double nextDouble() {
+            return Double.parseDouble(next());
+        }
+
+    }
+
+    public static void main(String[] arg) {
+        new TaskD().run();
+    }
+}

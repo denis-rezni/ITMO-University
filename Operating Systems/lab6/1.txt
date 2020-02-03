@@ -1,0 +1,19 @@
+1)
+
+mkdir LAB6
+wmic os get Caption > LAB6\cap.txt 
+wmic os get FreePhysicalMemory,TotalVisibleMemorySize > LAB6\mem.txt 
+wmic logicaldisk get name,description > LAB6\discs.txt
+
+2)
+
+mkdir TEST 2> NUL
+copy /y LAB6\* TEST\*
+
+3)
+
+copy /y LAB6\* wmic.txt
+
+4)
+
+rmdir /Q /S TEST LAB6
